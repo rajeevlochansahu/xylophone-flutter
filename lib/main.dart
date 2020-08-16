@@ -17,19 +17,55 @@ but what's really helpful is that on this website, you'll see that each of the p
 shown with a description, but also a score.
 */
 class XylophoneApp extends StatelessWidget {
+  void playSound(int soundNumber) {
+    final player = AudioCache();
+    player.play('note$soundNumber.wav');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Center(
-            child: Container(
-              child: FlatButton(
-                  onPressed: () {
-                    final player = AudioCache();
-                    player.play('note1.wav');
-                  },
-                  child: Text('Click me')),
+          child: Container(
+            child: Column(
+              children: [
+                FlatButton(
+                    color: Colors.red,
+                    onPressed: () {
+                      playSound(1);
+                    }),
+                FlatButton(
+                    color: Colors.green,
+                    onPressed: () {
+                      playSound(2);
+                    }),
+                FlatButton(
+                    color: Colors.blue,
+                    onPressed: () {
+                      playSound(3);
+                    }),
+                FlatButton(
+                    color: Colors.orange,
+                    onPressed: () {
+                      playSound(4);
+                    }),
+                FlatButton(
+                    color: Colors.yellow,
+                    onPressed: () {
+                      playSound(5);
+                    }),
+                FlatButton(
+                    color: Colors.cyan,
+                    onPressed: () {
+                      playSound(6);
+                    }),
+                FlatButton(
+                    color: Colors.teal,
+                    onPressed: () {
+                      playSound(7);
+                    }),
+              ],
             ),
           ),
         ),
